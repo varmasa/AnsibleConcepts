@@ -1,0 +1,9 @@
+---
+- hosts: dev
+  connection: ssh
+  become: yes
+  user: ansible
+
+  tasks:
+    - name: "Shell cmds"
+      shell: echo "Hello world" >> /tmp/result.txt

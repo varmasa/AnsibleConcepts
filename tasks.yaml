@@ -1,0 +1,14 @@
+---
+- hosts: dev
+  connection: ssh
+  user: ansible
+  become: yes
+
+  tasks:
+    - name: Insatlling GIT
+      action: yum name=git state=present
+      tags: install
+
+    - name: Uninstall GIT
+      action: yum name=git state=absent
+      tags: uninstall

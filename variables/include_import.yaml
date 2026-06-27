@@ -1,0 +1,9 @@
+---
+- hosts: dev
+  user: ansible
+  connection: ssh
+  become: yes
+
+  tasks:
+    - include_tasks: /home/ansible/ansible_playbooks/httpd_install.yaml
+    - import_tasks: /home/ansible/ansible_playbooks/httpd_install.yaml

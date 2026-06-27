@@ -1,0 +1,23 @@
+---
+- hosts: dev
+  connection: ssh
+  become: yes
+  user: ansible
+
+  tasks:
+    - name: File create
+      file:
+        path: "jenkins.txt"
+        state: touch
+        mode: 777
+
+    - name: Folder create
+      file:
+        path: "new"
+        state: directory
+
+    - name: Write content to a file
+      copy:
+        dest: /tmp/Ansible.txt
+        content: |
+          Welcome to ansible

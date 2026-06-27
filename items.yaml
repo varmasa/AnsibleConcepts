@@ -1,0 +1,13 @@
+---
+- hosts: dev
+  connection: ssh
+  user: ansible
+  become: yes
+
+  tasks:
+    - name: add users
+      user: name='{{item}}' state=present
+      with_items:
+        - sai
+        - varma
+        - vamsi

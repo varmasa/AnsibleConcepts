@@ -1,0 +1,18 @@
+---
+- hosts: dev
+  connection: ssh
+  user: ansible
+  become: yes
+
+  tasks:
+    - name: debug to print msg
+      debug:
+        msg: "Deployment started..."
+
+    - name: to check server uptime
+      command: uptime
+      register: output
+
+    - name: to print uptime
+      debug:
+        var: output.stdout

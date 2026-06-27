@@ -1,0 +1,19 @@
+---
+- hosts: dev
+  user: ansible
+  connection: ssh
+  become: yes
+
+  tasks:
+    - name: copy file
+      copy: 
+        src: index.html
+        dest: /var/www/html
+      notify:
+        - restart httpd
+
+  handlers:
+    - name: restart httpd
+      service:
+        name: httpd
+        state: restarted

@@ -1,0 +1,5 @@
+- name: install web server in all web servers
+  action: yum name=httpd state=present
+
+- name: start the webservers
+  service: name=httpd state=started

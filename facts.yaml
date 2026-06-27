@@ -1,0 +1,25 @@
+---
+- hosts: dev
+  connection: ssh
+  user: ansible
+  become: yes
+
+  tasks:
+    - name: "Facts in ansible"
+      debug:
+        msg: "{{ansible_os_family}}"
+    - name:
+      debug:
+        msg: "{{ansible_processor_cores}}"
+    - name:
+      debug:
+        msg: "{{ansible_kernel}}"
+    - name:
+      debug:
+        msg: "{{ansible_devices}}"
+    - name:
+      debug:
+        msg: "{{ansible_default_ipv4}}"
+    - name:
+      debug:
+        msg: "{{ansible_architecture}}"

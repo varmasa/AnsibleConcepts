@@ -1,0 +1,11 @@
+---
+- hosts: dev
+  connection: ssh
+  user: ansible
+  become: yes
+
+  tasks:
+    - name: "Git repo download"
+      get_url:
+        url: "https://github.com/varmasa/AnsibleConcepts.git"
+        dest: /tmp

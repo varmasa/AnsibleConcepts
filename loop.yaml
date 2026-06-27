@@ -1,0 +1,14 @@
+---
+- hosts: dev
+  connection: ssh
+  user: ansible
+  become: yes
+
+  tasks:
+    - yum:
+        name: "{{item}}"
+        state: present
+      loop:
+        - git
+        - docker
+        - nginx

@@ -1,0 +1,8 @@
+---
+- hosts: dev
+  user: ansible
+  become: yes
+  connection: ssh
+  tasks:
+    - name: Installing GIT
+      action: yum name=git state=present

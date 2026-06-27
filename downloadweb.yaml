@@ -1,0 +1,11 @@
+---
+- hosts: dev
+  connection: ssh
+  user: ansible
+  become: yes
+
+  tasks:
+    - name: Download from web
+      get_url:
+        url: https://picsum.photos/200/300
+        dest: /tmp/ph.img
