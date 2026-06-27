@@ -1,0 +1,12 @@
+---
+- hosts: dev
+  connection: ssh
+  user: ansible
+  become: yes
+
+  vars_files:
+    - vault.yaml
+
+  tasks:
+    - debug:
+        var: db_pass  //where in vault.yaml db_pass: ""
