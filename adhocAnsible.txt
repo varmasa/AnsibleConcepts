@@ -1,0 +1,6 @@
+syntax: ansible <hosts> -m <module> -a "<arguments>"
+
+ansible dev -m ping
+ansible dev -m command -a "uptime"
+ansible dev -m shell -a "df -h"
+ansible dev -b -m reboot
