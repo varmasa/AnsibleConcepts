@@ -1,0 +1,27 @@
+---
+- hosts: dev
+  connection: ssh
+  user: ansible
+  become: yes
+
+  tasks:
+
+    - block:
+
+        - name: Task1
+          yum: name=docker state=present
+
+        - name: Task2
+          yum: name=ngin state=present
+
+      rescue:
+
+        - name: Handle Failure
+          debug:
+            msg: "Something Failed"
+
+      always:
+
+        - name: Always run
+          debug:
+            msg: "Cleanup Task"
