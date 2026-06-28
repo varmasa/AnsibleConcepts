@@ -3,3 +3,10 @@ Forks are used to control parllalesm in hosts it runs sequentially based on fork
 ansible-playbook variables.yaml -f 1  //Here we have 2 servers then ansible runs one after another sequentially
 
 ansible-playbook variables.yaml -f 2  //Here we have 4 severs then ansible runs two servers sequentially then another two servers
+
+
+Extra things:
+
+ansible-playbook site.yaml --check              //DRY Run Preview the changes
+ansible-playbook site.yaml --syntax-check       //Checks YAML syntax & Playbook straucture
+ansible-playbook site.yaml -vvv                 //Shows detailed execution logs/debug info
