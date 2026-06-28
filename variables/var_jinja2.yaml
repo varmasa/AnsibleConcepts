@@ -1,0 +1,15 @@
+- hosts: dev
+  connection: ssh
+  user: ansible
+
+  vars:
+    port: 80
+    server_name: app.example.com
+    backend_host: 10.0.0.20
+    backend_port: 8080
+
+  tasks:
+    - name: Generate nginx config
+      template:
+        src: nginx.conf.j2
+        dest: /tmp/nginxx.conf
