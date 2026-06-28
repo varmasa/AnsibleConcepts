@@ -1,0 +1,12 @@
+---
+- hosts: dev
+  connection: ssh
+  user: ansible
+  become: yes
+
+  tasks:
+    - name: create file on localhost(master)
+      file:
+        path: /tmp/localhost.txt
+        state: touch
+      delegate_to: localhost
